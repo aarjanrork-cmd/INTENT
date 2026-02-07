@@ -1,0 +1,9 @@
+{
+  "name": "INTENT",
+  "short_name": "INTENT",
+  "description": "High-fidelity, intent-driven language mastery platform powered by Gemini 2.5.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

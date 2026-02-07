@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>INTENT - Professional Language Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --revolut-blue: #0075eb;
+            --bg-obsidian: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-obsidian);
+            color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate3d(0,0,0);
+        }
+
+        input, button, textarea, select {
+            font-family: inherit;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        @keyframes reveal-intent {
+            0% {
+                opacity: 0;
+                filter: blur(8px);
+                transform: scale(0.98) translate3d(0,0,0);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0px);
+                transform: scale(1) translate3d(0,0,0);
+            }
+        }
+
+        @keyframes shimmer-wipe {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes slide-left-exit {
+            0% { transform: translate3d(0, 0, 0); opacity: 1; }
+            100% { transform: translate3d(-100%, 0, 0); opacity: 1; }
+        }
+
+        @keyframes slide-in-right-page {
+            0% { transform: translate3d(100%, 0, 0); opacity: 1; }
+            100% { transform: translate3d(0, 0, 0); opacity: 1; }
+        }
+        
+        .page-enter-slide {
+            animation: slide-in-right-page 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity;
+            transform: translate3d(100%, 0, 0);
+            backface-visibility: hidden;
+            z-index: 300;
+            opacity: 1;
+        }
+
+        .intent-text {
+            background: linear-gradient(
+                90deg, 
+                #444 0%, 
+                #fff 45%, 
+                #fff 55%, 
+                #444 100%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: 
+                reveal-intent 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                shimmer-wipe 6s linear infinite;
+            will-change: transform, opacity, filter;
+        }
+
+        .splash-exit {
+            animation: slide-left-exit 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            opacity: 1;
+        }
+
+        .hw-accel {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            will-change: transform, opacity;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
